@@ -1,0 +1,12 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 106.25px);
+    grid-gap: 15px;
+}
+  
+.grid-cell {
+    height: 106.25px;
+    border-radius: 3px;
+    background: #acaaaa;
+    text-align: right, bottom;
+}
