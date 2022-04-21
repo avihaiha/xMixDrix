@@ -4,11 +4,17 @@ import './Borad.css';
 function Board() {
     let isXturn = true;
     let numberOfClicks = 0;
+    
 
     function click(e){
         if (numberOfClicks == 9){
             return;
         };
+        
+        if(e.target.innerText != ""){
+            return;
+        };
+
 
         numberOfClicks++;
         e.target.innerText = (isXturn)? "X":"O";
