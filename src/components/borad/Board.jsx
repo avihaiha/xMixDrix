@@ -1,37 +1,40 @@
 import React from "react";
 import './Borad.css';
+import Cell from "./Cell";
 
 function Board() {
+    let borad = [
+        null,null,null,
+        null,null,null,
+        null,null,null
+    ];
+
     let isXturn = true;
     let numberOfClicks = 0;
-    
 
-    function click(e){
+    function updateBoard(index){
         if (numberOfClicks == 9){
             return;
         };
         
-        if(e.target.innerText != ""){
+        if(borad[index] !== null){
             return;
         };
 
-
         numberOfClicks++;
-        e.target.innerText = (isXturn)? "X":"O";
+        borad[index] = (isXturn)? "X":"O";
         isXturn = !isXturn;
+
+        console.log(borad);
+
+        return borad[index];
     };
-
-    let cells = [];
-
-    for (var i = 0; i < 9; i++) {
-        cells.push(<div key={i} className="grid-cell" onClick={click}></div>);
-    }
 
     return (
         <div className="grid-container">
-            {cells}
+            {borad.map((value, index) => (<Cell key={index} updateBoard={() => updateBoard(index)} value={value} />))}
         </div>
-    )
+    );
 };
 
 
