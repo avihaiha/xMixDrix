@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Borad.css';
+import './Board.css';
 
 function Cell(props) {
     const [value, setValue] = useState(props.value);
