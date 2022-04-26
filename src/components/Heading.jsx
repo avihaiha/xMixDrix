@@ -8,19 +8,32 @@ function Heading (props){
     const oTurn = "O turn";
     const drow = "Drow! lets play again!"
     
-    if(props.isXturn && headingText != xTurn){
+   
+
+    if(props.winner){
+       if(headingText != props.winner){
+        setHeadingText(props.winner);
+       }
+    }
+    else if(props.isXturn && headingText != xTurn){
         setHeadingText(xTurn) 
     } 
     else if (!props.isXturn && headingText != oTurn ){
         setHeadingText(oTurn)
+    } else if (props.winner){
+        if(headingText != drow){
+            setHeadingText(drow);
+        }
     }
-
-
-
-
-
-   
     
+   
+
+    
+
+
+
+
+
 
     return (
         <div>
