@@ -3,13 +3,17 @@ import './Board.css';
 
 function Cell(props) {
     const [value, setValue] = useState(props.value);
+    
+    if(value != props.value){
+        setValue(props.value);
+    };
 
     function click(event) {
         let newValue = props.updateBoard();
 
         if (!newValue) {
             return;
-        }
+        };
 
         setValue(newValue);
     }
@@ -20,3 +24,4 @@ function Cell(props) {
 };
 
 export default Cell;
+
