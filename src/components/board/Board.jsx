@@ -65,15 +65,15 @@ function Board() {
         return(board[index]);
     }
 
-    function resetBoard(){
-       setBoard([
+     function resetBoard(){
+        setBoard([
             null,null,null,
             null,null,null,
             null,null,null
         ]);
         setNumberOfClicks(0);
         setWinner(false);
-       setIsXturn(true);
+        setIsXturn(true);
     };
 
     return ( 
@@ -82,10 +82,11 @@ function Board() {
             <div className="grid-container">
                 {board.map((value, index) => (<Cell key={index} updateBoard={() => updateBoard(index)} value={value} />))}
             </div>
-            <button onClick={resetBoard}>Restart</button>
+            {(winner === "X win" || winner === "O win" || winner === "Drow! lets play again!")  &&
+             <button onClick={resetBoard}>Restart</button> }
         </div>
     );
-};
+};  
 
 
 

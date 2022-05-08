@@ -4,7 +4,7 @@ import './Board.css';
 function Cell(props) {
     const [value, setValue] = useState(props.value);
     
-    if(value != props.value){
+    if(value !== props.value){
         setValue(props.value);
     };
 
